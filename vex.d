@@ -8,6 +8,7 @@ template vex_t(Type) {
         this(vex2 v) { x = Type(v.x); y = Type(v.y); };
         this(vex3 v) { x = Type(v.x); y = Type(v.y); };
         this(vex4 v) { x = Type(v.x); y = Type(v.y); };
+        auto arr() { return [x,y]; };
         vex2 opCall() { return this; };
         bool opEquals(Type v) { return (x == v && y == v); };
         bool opEquals(vex2 v) { return (x == Type(v.x) && y == Type(v.y)); };
@@ -80,6 +81,7 @@ template vex_t(Type) {
         this(vex2 v) { x = Type(v.x); y = Type(v.y); };
         this(vex3 v) { x = Type(v.x); y = Type(v.y); z = Type(v.z); };
         this(vex4 v) { x = Type(v.x); y = Type(v.y); z = Type(v.z); };
+        auto arr() { return [x,y,z]; };
         vex3 opCall() { return this; };
         bool opEquals(Type v) { return (x == Type(v  ) && y == Type(v  ) && z == Type(v)); };
         bool opEquals(vex2 v) { return (x == Type(v.x) && y == Type(v.y)); };
@@ -156,6 +158,7 @@ template vex_t(Type) {
         this(vex2 v) { x = Type(v.x); y = Type(v.y); };
         this(vex3 v) { x = Type(v.x); y = Type(v.y); z = Type(v.z); };
         this(vex4 v) { x = Type(v.x); y = Type(v.y); z = Type(v.z); w = Type(v.w); };
+        auto arr() { return [x,y,z,w]; };
         vex4 opCall() { return this; };
         bool opEquals(Type v) { return (x == Type(v  ) && y == Type(v) && z == Type(v) && w == Type(v)); };
         bool opEquals(vex2 v) { return (x == Type(v.x) && y == Type(v.y)); };
